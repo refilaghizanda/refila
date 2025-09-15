@@ -287,6 +287,24 @@ body {
     background: var(--hover);
 }
 
+.content-link {
+    /* This is the key to removing default link styles */
+    color: inherit; /* Inherits the text color from the parent (the h3) */
+    text-decoration: none; /* Removes the underline */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    gap: 1rem; /* Adds space between the items */
+}
+
+/* Optional: Adjust layout for mobile */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stacks into one column on small screens */
+    }
+}
 /* Footer */
 .footer {
     margin-top: 2rem;
