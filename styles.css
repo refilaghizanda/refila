@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --text-muted: #666666;
+    --accent: #00ff88;
+    --border: #333333;
+    --hover: #2a2a2a;
+}
+
+[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --text-muted: #999999;
+    --accent: #007bff;
+    --border: #e9ecef;
+    --hover: #f1f3f4;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    min-height: 100vh;
+}
+
+.card {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    background: var(--hover);
+    transform: translateY(-2px);
+}
+
+/* Profile Card */
+.profile-card {
+    text-align: center;
+}
+
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    border: 3px solid var(--text-primary);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-card h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* About Card */
+.about-card h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.about-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Recognition & Projects */
+.recognition-item,
+.project-item,
+.experience-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+}
+
+.year {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    min-width: 40px;
+    font-weight: 500;
+}
+
+.recognition-content h3,
+.project-content h3,
+.experience-content h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.recognition-content h3:hover,
+.project-content h3:hover,
+.experience-content h3:hover {
+    color: var(--accent);
+}
+
+.recognition-content p,
+.project-content p {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.project-content img {
+    width: 10em;
+}
+/* Experience Card */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.company {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.location {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* Consulting Grid */
+.consulting-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.consulting-item {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--bg-primary);
+    transition: all 0.3s ease;
+}
+
+.consulting-item:hover {
+    transform: translateY(-2px);
+    background: var(--hover);
+}
+
+.consulting-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.consulting-item h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.consulting-item p {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+/* Highlights */
+.highlight-image {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 200px;
+}
+
+.highlight-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.highlight-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 1.5rem 1rem 1rem;
+    color: white;
+}
+
+.highlight-overlay h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.highlight-overlay p {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.skill-card h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skill-list span {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--bg-primary);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.skill-list span:hover {
+    color: var(--accent);
+    background: var(--hover);
+}
+
+/* Footer */
+.footer {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--hover);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .consulting-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 1rem;
+    }
+    
+    .recognition-item,
+    .project-item,
+    .experience-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .year {
+        min-width: auto;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
