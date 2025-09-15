@@ -118,6 +118,12 @@ body {
     font-weight: 500;
 }
 
+.project-link {
+    /* This removes the default blue color and underline */
+    color: inherit; /* Inherits the text color from its parent (.project-content) */
+    text-decoration: none; /* Removes the underline */
+}
+
 .recognition-content h3,
 .project-content h3,
 .experience-content h3 {
